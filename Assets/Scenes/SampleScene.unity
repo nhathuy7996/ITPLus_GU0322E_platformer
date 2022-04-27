@@ -476,7 +476,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1c5ea959ea4ca40fbb425d81ef6d2198, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -565,4 +565,5 @@ MonoBehaviour:
   friction:
   - {fileID: 6200000, guid: 1c5ea959ea4ca40fbb425d81ef6d2198, type: 2}
   - {fileID: 6200000, guid: b576817e465e741fabbc65087a99a61f, type: 2}
+  slopeForce: {x: 0, y: -100}
   playerState: 0

@@ -14,7 +14,7 @@ public class playerController : MonoBehaviour
 
     [SerializeField] PhysicsMaterial2D[] friction;
 
-
+    [SerializeField] Vector2 slopeForce;
 
     [SerializeField] PLAYER_STATE playerState = PLAYER_STATE.IDLE;
 
@@ -46,6 +46,12 @@ public class playerController : MonoBehaviour
 
     void move()
     {
+
+        if (isOnSlope && isGround)
+        {
+            Rigi.AddForce(slopeForce);
+        }
+
         Vector2 movement = Vector2.zero;
 
         movement.x = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
@@ -64,7 +70,10 @@ public class playerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGround == true)
         {
-            Rigi.AddForce(new Vector2(0, jumpForce));
+            if (isOnSlope)
+                Rigi.AddForce(new Vector2(0, jumpForce * 5));
+            else
+                Rigi.AddForce(new Vector2(0, jumpForce));
         }
     }
 
@@ -97,6 +106,12 @@ public class playerController : MonoBehaviour
 
     bool slopeCheck()
     {
+
+        if (!isGround)
+        {
+            return false;
+        }
+
         RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.down,10);
 
         Debug.DrawRay(this.transform.position, Vector2.down, Color.red);
@@ -114,6 +129,12 @@ public class playerController : MonoBehaviour
         }
 
         return true;
+    }
+
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        isGround = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
