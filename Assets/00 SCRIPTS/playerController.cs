@@ -18,6 +18,8 @@ public class playerController : MonoBehaviour
 
     [SerializeField] PLAYER_STATE playerState = PLAYER_STATE.IDLE;
 
+    [SerializeField] AnimController_base Anim;
+
     public enum PLAYER_STATE
     {
         IDLE,
@@ -31,6 +33,8 @@ public class playerController : MonoBehaviour
     void Start()
     {
         Rigi = this.GetComponent<Rigidbody2D>();
+
+        Anim = this.GetComponentInChildren<AnimController_base>();
     }
 
     // Update is called once per frame
@@ -101,6 +105,8 @@ public class playerController : MonoBehaviour
                 playerState = PLAYER_STATE.FALL;
 
         }
+
+        Anim.ChangeAnim(playerState);
     }
 
 
