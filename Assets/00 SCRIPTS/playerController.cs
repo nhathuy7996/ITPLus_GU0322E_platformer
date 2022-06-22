@@ -20,6 +20,8 @@ public class playerController : MonoBehaviour
 
     [SerializeField] AnimController_base Anim;
 
+    [SerializeField] GunController_base Gun;
+
     public enum PLAYER_STATE
     {
         IDLE,
@@ -35,6 +37,8 @@ public class playerController : MonoBehaviour
         Rigi = this.GetComponent<Rigidbody2D>();
 
         Anim = this.GetComponentInChildren<AnimController_base>();
+
+        Gun = this.GetComponentInChildren<GunController_base>();
     }
 
     // Update is called once per frame
@@ -44,8 +48,17 @@ public class playerController : MonoBehaviour
         move();
         UpdateState();
 
+        Atk();
+
         isOnSlope = slopeCheck();
 
+    }
+
+    void Atk()
+    {
+        if (Input.GetKey(KeyCode.C)) {
+            Gun.Fire(this.transform.localScale.x);
+        }
     }
 
     void move()
@@ -61,6 +74,14 @@ public class playerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
         movement.y = Rigi.velocity.y;
 
+        if (movement.x != 0)
+        {
+            if (movement.x > 0)
+                this.transform.localScale = new Vector2(1,1);
+            else
+                this.transform.localScale = new Vector2(-1, 1);
+        }
+
         if (isOnSlope)
         {
             if (movement.x != 0)
@@ -75,7 +96,7 @@ public class playerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGround == true)
         {
             if (isOnSlope)
-                Rigi.AddForce(new Vector2(0, jumpForce * 5));
+                Rigi.AddForce(new Vector2(0, jumpForce * 3));
             else
                 Rigi.AddForce(new Vector2(0, jumpForce));
         }
@@ -136,6 +157,7 @@ public class playerController : MonoBehaviour
 
         return true;
     }
+
 
 
     private void OnCollisionStay2D(Collision2D collision)

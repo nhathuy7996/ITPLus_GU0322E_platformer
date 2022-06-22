@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{7FC00681-BEF8-DF92-E0BD-0CBD4A308ED7}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/00 SCRIPTS/Gun/BulletController_base.cs">
+    <Files>
+      <File FileName="Assets/00 SCRIPTS/playerController.cs" Line="148" Column="1" />
+      <File FileName="Assets/00 SCRIPTS/AnimController_unity.cs" Line="30" Column="65" />
+      <File FileName="Assets/00 SCRIPTS/AnimController_base.cs" Line="20" Column="26" />
+      <File FileName="Assets/00 SCRIPTS/GunController_base.cs" Line="7" Column="33" />
+      <File FileName="Assets/00 SCRIPTS/GunSample.cs" Line="22" Column="9" />
+      <File FileName="Assets/00 SCRIPTS/Gun/BulletController_base.cs" Line="10" Column="8" />
+      <File FileName="Assets/00 SCRIPTS/Gun/BulletSample.cs" Line="5" Column="50" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="GU0322E_Platformer" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="00 SCRIPTS" expanded="True">
+                <Node name="Gun" expanded="True">
+                  <Node name="BulletController_base.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="56f0670c-8793-4bb1-a6ac-0419e7f1f0c5" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

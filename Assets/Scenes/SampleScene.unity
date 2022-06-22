@@ -430,6 +430,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -51.808}
+--- !u!1 &1844690596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1844690597}
+  - component: {fileID: 1844690598}
+  m_Layer: 0
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1844690597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844690596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.51, y: 1.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1987282729}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1844690598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844690596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b03184b47d364f9e8f3477daeecd006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AtkSpeed: 0.5
+  bulletPrefab: {fileID: 8200442848513246370, guid: 4474bb44ec6fd4bebb296146ca2f7702, type: 3}
 --- !u!1 &1978531341
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,8 +603,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &1987282726
-CircleCollider2D:
+--- !u!70 &1987282726
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -571,9 +616,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: 0.9264529}
+  m_Size: {x: 0.5, y: 2.8529058}
+  m_Direction: 0
 --- !u!50 &1987282727
 Rigidbody2D:
   serializedVersion: 4
@@ -607,6 +652,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1317132963}
+  - {fileID: 1844690597}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -622,13 +668,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3bb40a89052e4eec95fdd759e4257bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 200
+  jumpForce: 300
   speed: 500
   isGround: 0
   isOnSlope: 0
   friction:
   - {fileID: 6200000, guid: 1c5ea959ea4ca40fbb425d81ef6d2198, type: 2}
   - {fileID: 6200000, guid: b576817e465e741fabbc65087a99a61f, type: 2}
-  slopeForce: {x: 0, y: -100}
+  slopeForce: {x: 0, y: -200}
   playerState: 0
   Anim: {fileID: 0}
+  Gun: {fileID: 0}

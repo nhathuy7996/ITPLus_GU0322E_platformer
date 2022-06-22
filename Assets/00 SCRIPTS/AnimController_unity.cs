@@ -27,7 +27,7 @@ public class AnimController_unity : AnimController_base
             return;
 
 
-        for (int i = 0; i< (int)playerController.PLAYER_STATE.JUMP; i++)
+        for (int i = 0; i<= (int)playerController.PLAYER_STATE.JUMP; i++)
         {
             animator.SetBool(((playerController.PLAYER_STATE)i).ToString(), false);
         }
@@ -42,6 +42,9 @@ public class AnimController_unity : AnimController_base
                 animator.SetBool(playerController.PLAYER_STATE.WALK.ToString(), true);
                 break;
 
+            case playerController.PLAYER_STATE.JUMP:
+                animator.SetBool(playerController.PLAYER_STATE.JUMP.ToString(), true);
+                break;
         }
 
         oldState = curentState;
