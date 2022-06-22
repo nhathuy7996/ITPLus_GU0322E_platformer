@@ -9,16 +9,20 @@ public class AnimController_unity : AnimController_base
 
     playerController.PLAYER_STATE oldState;
 
+
+    GunController_base Gun;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = this.GetComponent<Animator>();
+        Gun = this.transform.parent.GetComponentInChildren<GunController_base>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        animator.SetFloat("GUN_State", (int)Gun.Gun_State);
     }
 
     public override void ChangeAnim(playerController.PLAYER_STATE curentState)

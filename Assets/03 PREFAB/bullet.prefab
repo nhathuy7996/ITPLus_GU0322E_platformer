@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 700
   Damage: 0
+  LifeTime: 2
   Movement: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   Sprite: {fileID: 8200442848886156838}

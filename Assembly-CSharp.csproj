@@ -63,6 +63,8 @@
     <Compile Include="Assets/00 SCRIPTS/Gun/GunSample.cs" />
     <Compile Include="Assets/00 SCRIPTS/Gun/BulletController_base.cs" />
     <Compile Include="Assets/00 SCRIPTS/Gun/BulletSample.cs" />
+    <Compile Include="Assets/00 SCRIPTS/Singleton.cs" />
+    <Compile Include="Assets/00 SCRIPTS/Gun/BulletManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

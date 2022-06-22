@@ -48,18 +48,11 @@ public class playerController : MonoBehaviour
         move();
         UpdateState();
 
-        Atk();
-
         isOnSlope = slopeCheck();
 
     }
 
-    void Atk()
-    {
-        if (Input.GetKey(KeyCode.C)) {
-            Gun.Fire(this.transform.localScale.x);
-        }
-    }
+
 
     void move()
     {

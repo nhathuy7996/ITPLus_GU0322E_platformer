@@ -16,21 +16,20 @@ public class GunSample : GunController_base
     // Update is called once per frame
     void Update()
     {
-        if (CountDown > 0)
-            CountDown -= Time.deltaTime;
+        base.Update();
     }
 
     public override void Fire(float way)
     {
-
+        _Gun_State = GUN_STATE.fire;
         way = way > 0 ? 1 : -1;
 
         if (CountDown > 0)
             return;
 
         CountDown = AtkSpeed;
-        BulletController_base bullet = Instantiate(bulletPrefab, this.transform.position, Quaternion.identity).GetComponent<BulletController_base>();
-
+        BulletController_base bullet = BulletManager.Instant.getBullet(this.transform.position).GetComponent<BulletController_base>();
+        bullet.gameObject.SetActive(true);
         bullet.SetMovement(Vector3.right * way);
         
     }

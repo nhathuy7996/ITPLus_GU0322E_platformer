@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class BulletController_base : MonoBehaviour
 {
     [SerializeField]
-    protected float Speed, Damage;
+    protected float Speed, Damage, LifeTime;
 
     [SerializeField] Vector3 Movement;
 
@@ -15,15 +15,24 @@ public abstract class BulletController_base : MonoBehaviour
     [SerializeField]
     SpriteRenderer Sprite;
 
+    Coroutine Cor_Deactive;
+
     protected void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
     }
 
+    private void OnEnable()
+    {
+        Cor_Deactive = StartCoroutine(Deactive());
+    }
+
+    
 
     private void OnDisable()
     {
         this.rb.velocity = Vector2.zero;
+        StopCoroutine(Cor_Deactive);
     }
 
     public void SetMovement(Vector3 way)
@@ -45,5 +54,11 @@ public abstract class BulletController_base : MonoBehaviour
     protected void Update()
     {
         this.rb.velocity = Movement * Speed * Time.deltaTime;
+    }
+
+    IEnumerator Deactive()
+    {
+        yield return new WaitForSeconds(LifeTime);
+        this.gameObject.SetActive(false);
     }
 }
