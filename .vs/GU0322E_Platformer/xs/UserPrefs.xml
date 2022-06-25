@@ -1,23 +1,29 @@
 ﻿<Properties StartupConfiguration="{7FC00681-BEF8-DF92-E0BD-0CBD4A308ED7}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/00 SCRIPTS/Platform/MovingObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/00 SCRIPTS/CameraMoving.cs">
     <Files>
-      <File FileName="Assets/00 SCRIPTS/playerController.cs" Line="49" Column="23" />
+      <File FileName="Assets/00 SCRIPTS/playerController.cs" Line="73" Column="42" />
       <File FileName="Assets/00 SCRIPTS/AnimController_unity.cs" />
       <File FileName="Assets/00 SCRIPTS/AnimController_base.cs" />
       <File FileName="Assets/00 SCRIPTS/Gun/BulletController_base.cs" />
       <File FileName="Assets/00 SCRIPTS/Gun/BulletSample.cs" />
       <File FileName="Assets/00 SCRIPTS/Singleton.cs" />
       <File FileName="Assets/00 SCRIPTS/Gun/BulletManager.cs" />
-      <File FileName="Assets/00 SCRIPTS/Platform/MovingObject.cs" Line="40" Column="10" />
+      <File FileName="Assets/00 SCRIPTS/Platform/MovingObject.cs" Line="8" Column="5" />
+      <File FileName="Assets/00 SCRIPTS/PathCreator/PathEditor.cs" />
+      <File FileName="Assets/00 SCRIPTS/PathCreator/PathCreator.cs" />
+      <File FileName="Assets/00 SCRIPTS/JoyStick.cs" Line="30" Column="1" />
+      <File FileName="Assets/00 SCRIPTS/CameraMoving.cs" Line="7" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="GU0322E_Platformer" expanded="True">
-            <Node name="Assets" expanded="True" selected="True">
+            <Node name="Assets" expanded="True">
               <Node name="00 SCRIPTS" expanded="True">
                 <Node name="Gun" expanded="True" />
+                <Node name="PathCreator" expanded="True" />
                 <Node name="Platform" expanded="True" />
+                <Node name="CameraMoving.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -27,7 +33,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e1268622-5642-404a-8e70-18a5255a2a39" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bd1ed4be-8e5b-47af-a273-4d666ab4c0a4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -156,15 +156,20 @@ public class playerController : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         isGround = true;
+        if (collision.gameObject.GetComponent<MovingObject>() != null)
+            this.transform.parent = collision.transform;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.GetComponent<MovingObject>() != null)
+            this.transform.parent = collision.transform;
         isGround = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         isGround = false;
+        this.transform.parent = null;
     }
 }

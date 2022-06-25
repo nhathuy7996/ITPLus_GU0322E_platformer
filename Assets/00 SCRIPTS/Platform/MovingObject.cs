@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovingObject : MonoBehaviour
 {
     [SerializeField] float Speed = 5;
-    [SerializeField] List<Vector2> Point = new List<Vector2>();
+    List<Vector3> Points = new List<Vector3>();
 
     [SerializeField]
     int currentIndex = -1;
@@ -13,21 +13,22 @@ public class MovingObject : MonoBehaviour
     [SerializeField]
     bool way = false;
 
-    Vector2 initPos;
+    Vector3 initPos;
     // Start is called before the first frame update
     void Awake()
     {
         initPos = this.transform.position;
+        Points = this.GetComponent<PathCreator>().List_Points;
     }
 
     // Update is called once per frame
     void Update()
     {
-   
+        
 
-        Debug.Log(Vector2.Distance(this.transform.position, Point[currentIndex + 1] + initPos));
+        Debug.Log(Vector2.Distance(this.transform.position, Points[currentIndex + 1] + initPos));
 
-        if (Vector2.Distance(this.transform.position, Point[currentIndex + 1] + initPos) < 0.3f)
+        if (Vector2.Distance(this.transform.position, Points[currentIndex + 1] + initPos) < 0.3f)
         {
             if (!way)
                 currentIndex += 1;
@@ -37,10 +38,10 @@ public class MovingObject : MonoBehaviour
             //currentIndex += way ? -1 : 1;
         }
 
-        if (currentIndex >= Point.Count-1 && !way)
+        if (currentIndex >= Points.Count-1 && !way)
         {
             way = !way;
-            currentIndex = Point.Count - 2;
+            currentIndex = Points.Count - 2;
         }else if (currentIndex < 0 && way)
         {
             way = !way;
@@ -48,23 +49,10 @@ public class MovingObject : MonoBehaviour
 
 
          
-        this.transform.position = Vector3.MoveTowards(this.transform.position, Point[currentIndex + 1] + initPos, Speed * Time.deltaTime );
+        this.transform.position = Vector3.MoveTowards(this.transform.position, Points[currentIndex + 1] + initPos, Speed * Time.deltaTime );
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-
-        for (int i = 0; i < Point.Count - 1; i++)
-        {
-            Gizmos.DrawLine(this.Point[i] + initPos, this.Point[i + 1] + initPos);
-        }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        //initPos = this.transform.position;
-    }
+    
 
 
 }

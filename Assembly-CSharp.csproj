@@ -57,15 +57,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/00 SCRIPTS/Gun/BulletController_base.cs" />
+    <Compile Include="Assets/00 SCRIPTS/PathCreator/PathEditor.cs" />
     <Compile Include="Assets/00 SCRIPTS/Gun/GunSample.cs" />
     <Compile Include="Assets/00 SCRIPTS/Gun/BulletManager.cs" />
     <Compile Include="Assets/00 SCRIPTS/AnimController_base.cs" />
+    <Compile Include="Assets/00 SCRIPTS/PathCreator/PathCreator.cs" />
     <Compile Include="Assets/00 SCRIPTS/Gun/GunController_base.cs" />
     <Compile Include="Assets/00 SCRIPTS/Platform/MovingObject.cs" />
     <Compile Include="Assets/00 SCRIPTS/Singleton.cs" />
     <Compile Include="Assets/00 SCRIPTS/playerController.cs" />
+    <Compile Include="Assets/00 SCRIPTS/JoyStick.cs" />
     <Compile Include="Assets/00 SCRIPTS/AnimController_unity.cs" />
     <Compile Include="Assets/00 SCRIPTS/Gun/BulletSample.cs" />
+    <Compile Include="Assets/00 SCRIPTS/CameraMoving.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
