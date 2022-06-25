@@ -26,7 +26,7 @@ public class MovingObject : MonoBehaviour
     {
         
 
-        Debug.Log(Vector2.Distance(this.transform.position, Points[currentIndex + 1] + initPos));
+       // Debug.Log(Vector2.Distance(this.transform.position, Points[currentIndex + 1] + initPos));
 
         if (Vector2.Distance(this.transform.position, Points[currentIndex + 1] + initPos) < 0.3f)
         {
